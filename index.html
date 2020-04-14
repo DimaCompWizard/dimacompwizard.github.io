@@ -1,7 +1,25 @@
 <html>
 <head>
 </head>
-<body>
+<body id='123'>
     Olololo
+    <script type="text/javascript">
+    function httpGet(theUrl)
+    {   
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+        xmlHttp.send( null );
+        return xmlHttp.responseText;
+    }
+    document.getElementById('123').innerHTML = httpGet("http://api.hil.su/v2/staff/list");
+
+    /*if (typeof elem.textContent !== "undefined") {
+        el.textContent = 'text';
+    } else {
+        el.innerText = 'text';
+    }
+
+    el.innetHTML = '<p>text</p>'*/
+    </script>
 </body>
 </html>
